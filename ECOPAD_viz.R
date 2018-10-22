@@ -3,10 +3,10 @@ args = commandArgs(TRUE)
 # args[2] is the directory for simulation files
 # args[2] is output directory of graphs
 args1 = "obs_file/SEV_obs_flux.txt"
-args2 = "sim_file/Simu_dailyflux14001.txt"
-args3 = "sim_file"
-#args2 = "graphoutput/Simu_dailyflux14001.txt"
-#args3 = "graphoutput"
+#args2 = "sim_file/Simu_dailyflux14001.txt"
+#args3 = "sim_file"
+args2 = "graphoutput/Simu_dailyflux14001.txt"
+args3 = "graphoutput"
 
 tmp <- read.table(args1,header=T, sep="")
 tmp[tmp==-9999] <- NA
