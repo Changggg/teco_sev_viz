@@ -5,7 +5,7 @@ args = commandArgs(TRUE)
 args1 = "obs_file/SEV_obs_flux.txt"
 #args2 = "sim_file/Simu_dailyflux14001.txt"
 #args3 = "sim_file"
-args2 = "graphoutput/Simu_dailyflux14001.txt"
+args2 = "graphoutput/Simu_dailyflux001.txt"
 args3 = "graphoutput"
 
 tmp <- read.table(args1,header=T, sep="")
@@ -79,6 +79,14 @@ mtext(side = 2, expression(paste("NEE (g ",m^-2,day^-1,")")),line=2.3,cex=1.2)
 axis(side=1,at=ticks,labels=xticklab)
 axis(side=2)
 points(tmp[,"days"],tmp[,"NEE"],col='red',pch=19, cex = 0.2)
+dev.off()
+
+png(height=1200, width=1400,pointsize=40, file="foliage_NPP.png")
+plot(tmp2[,"sdoy"],tmp2[,"fNPP"],type='l',axes=FALSE,xlab="Years",ylab="")
+mtext(side = 2, expression(paste("Foliage NPP (g C",m^-2,year^-1,")")),line=2.3,cex=1.2) 
+axis(side=1,at=ticks,labels=xticklab)
+axis(side=2)
+points(tmp[,"days"],tmp[,"FoliageNPP"],col='red',pch=19)
 dev.off()
 
 # png(height=1200, width=1400,pointsize=40, file="foliage.png")
