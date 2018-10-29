@@ -17,7 +17,7 @@ args3 = args[3]
 # "E:/OU/MCMC/ECOPAD_TECO_SPRUCE/graphoutput"
 
 currentdate = Sys.Date()
-firstday = as.numeric(currentdate - as.Date('2011-01-01'))
+firstday = as.numeric(currentdate - as.Date('2010-01-01'))
 lastday = firstday+7
 
 tmp <- read.table(args1,header=TRUE,sep="")

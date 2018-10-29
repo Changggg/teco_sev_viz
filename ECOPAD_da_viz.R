@@ -2,12 +2,8 @@
 
 args = commandArgs(TRUE)
 library(ggplot2)
-# args[1] is the directory for observation files
-# args[2] is the directory for simulation files
+# args[1] is the estimated parameter i.e., Paraest.txt
 # args[2] is output directory of graphs
-#args1 = "obs_file/SPRUCE_obs.txt"
-args2 = "graphoutput/Simu_dailyflux.txt"
-args3 = "graphoutput"
 
 args2 = args[1]
 #args2 = "E:/OU/MCMC/ECOPAD_TECO_SPRUCE/output/Paraest.txt"
@@ -19,7 +15,7 @@ par.string = c('lat','longi','wsmax','wsmin','LAImax','LAImin','rdepth',
                'GSmax','stom_n','a1','Ds0','Vcmax','extkU','xfang',
                'alpha','Tau_leaf','Tau_wood','Tau_root','Tau_fine',
                'Tau_coarse','Tau_fast','Tau_slow','Tau_passive',
-               'GDDonset','Q10','RL0','RS0','Rr0')
+               'GDDonset','Q10','RL0','RS0','Rr0','AGB0')
 npara = scan(args2,nlines=1)
 da.varname = scan(args2,skip=1,nlines=1,sep="")
 tmp <- read.table(args2,skip=2,sep=",")
