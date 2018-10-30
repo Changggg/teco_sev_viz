@@ -37,8 +37,8 @@ tmp[tmp==-9999] <- NA
 
 tmp2 <- read.table(args2,header = T, sep=",")
 #2010 ~ 2017; 2922 days
-tmp2 <- tail(tmp2, 2922)
-tmp2$sdoy <- 1:2922
+#tmp2 <- tail(tmp2, 2922)
+#tmp2$sdoy <- 1:2922
 
 # days = tmp[,1]
 # gpp = tmp[,2]
@@ -82,11 +82,11 @@ points(tmp[,"days"],tmp[,"NEE"],col='red',pch=19, cex = 0.2)
 dev.off()
 
 png(height=1200, width=1400,pointsize=40, file="foliage_NPP.png")
-plot(tmp2[,"sdoy"],tmp2[,"fNPP"],type='l',axes=FALSE,xlab="Years",ylab="")
-mtext(side = 2, expression(paste("Foliage NPP (g C",m^-2,year^-1,")")),line=2.3,cex=1.2) 
+plot(tmp2[,"sdoy"],tmp2[,"Foliage"],type='l',axes=FALSE,xlab="Years",ylab="")
+mtext(side = 2, expression(paste("Foliage (g C",m^-2,year^-1,")")),line=2.3,cex=1.2) 
 axis(side=1,at=ticks,labels=xticklab)
 axis(side=2)
-points(tmp[,"days"],tmp[,"FoliageNPP"],col='red',pch=19)
+points(tmp[,"days"],tmp[,"Foliage"],col='red',pch=19)
 dev.off()
 
 # png(height=1200, width=1400,pointsize=40, file="foliage.png")
