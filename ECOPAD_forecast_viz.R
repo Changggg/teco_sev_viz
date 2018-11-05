@@ -63,7 +63,7 @@ soil.mat = matrix(nrow=tspan,ncol=ind)
 
 for(k in 1:ind){
   filename = paste("Simu_dailyflux",sprintf("%03d",k),".txt",sep='')
-  tmp <- read.table(filename,sep=",")
+  tmp <- read.table(filename,sep=",", header = T)
   days = tmp[,1]
   gpp = tmp[,2]
   nee = tmp[,3]

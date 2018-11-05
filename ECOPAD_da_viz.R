@@ -28,7 +28,7 @@ levels(data.reshape$time) <- par.string[da.varname]
 
 setwd(args3)
 png(height=1200, width=1400,pointsize=40, file="histogram.png")
-ggplot(data.reshape,aes(V2)) + geom_histogram() + facet_wrap(~ time,scales="free_x") +
+ggplot(data.reshape,aes(V2)) + geom_histogram() + facet_wrap(~ time,scales="free") +
   theme(strip.text.x = element_text(size = 20)) +
   labs(x="",y="Frequency") +
   theme(axis.text = element_text(size=20),axis.title=element_text(size=rel(1.8)))
